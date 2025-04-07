@@ -14,13 +14,11 @@ function initCreateUser() {
 
     alertContainer.innerHTML = "";
 
-    if (!username || !email || !password || !repeatpassword) {
-      showAlert("Por favor, completa todos los campos.", "danger");
+    if (!username || !email || !password || !repeatpassword) {showAlert("Por favor, completa todos los campos.", "danger");
       return;
     }
 
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      showAlert("Introduce un correo válido.", "danger");
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {showAlert("Introduce un correo válido.", "danger");
       return;
     }
 
@@ -39,7 +37,6 @@ function initCreateUser() {
     usuarios.push(newUser);
     localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-   
     showAlert("Usuario creado correctamente.", "success");
 
     setTimeout(() => {
@@ -83,4 +80,3 @@ function initShowUsers() {
     container.appendChild(card);
   });
 }
-
